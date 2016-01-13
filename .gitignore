@@ -4,3 +4,12 @@
 languages/classes_gen/
 languages/source_gen/
 **/*.info
+
+classes_gen
+source_gen
+source_gen.caches
+*.iws
+test_gen
+test_gen.caches
+
+*~
