@@ -9,7 +9,7 @@
     <language id="05513acf-3b33-4231-a861-57f914a89bdd" name="ArduinoML">
       <concept id="9183988270989984917" name="ArduinoML.structure.State" flags="ng" index="eK_0T">
         <child id="9183988270989984993" name="actions" index="eK_1d" />
-        <child id="9183988270989985012" name="transition" index="eK_1o" />
+        <child id="9183988270989985012" name="transitions" index="eK_1o" />
       </concept>
       <concept id="9183988270989984830" name="ArduinoML.structure.Action" flags="ng" index="eK_2i">
         <property id="9183988270989984870" name="status" index="eK_3a" />
@@ -42,15 +42,15 @@
     <ref role="eK_a_" node="5Cg0tVFCSyT" resolve="off" />
     <node concept="eQBWa" id="5Cg0tVFCSBe" role="eQBWr">
       <property role="TrG5h" value="button_one" />
-      <property role="eQxar" value="1" />
+      <property role="eQxar" value="10" />
     </node>
     <node concept="eQBWa" id="5Cg0tVFCSBk" role="eQBWr">
       <property role="TrG5h" value="button_two" />
-      <property role="eQxar" value="2" />
+      <property role="eQxar" value="11" />
     </node>
     <node concept="eQBeO" id="5Cg0tVFCSBs" role="eQBWr">
       <property role="TrG5h" value="buzzer" />
-      <property role="eQxar" value="3" />
+      <property role="eQxar" value="12" />
     </node>
     <node concept="eK_0T" id="5Cg0tVFCSyT" role="eK_4i">
       <property role="TrG5h" value="off" />
@@ -59,19 +59,64 @@
         <ref role="eK_4D" node="5Cg0tVFCSBe" resolve="button_one" />
         <ref role="eK_4F" node="5Cg0tVFCSBz" resolve="push_two" />
       </node>
+      <node concept="eK_61" id="v2JSW2RDX5" role="eK_1o">
+        <property role="eK_73" value="true" />
+        <ref role="eK_4D" node="5Cg0tVFCSBk" resolve="button_two" />
+        <ref role="eK_4F" node="5Cg0tVFCSBG" resolve="push_one" />
+      </node>
       <node concept="eK_2i" id="5Cg0tVFCSBx" role="eK_1d">
         <property role="eK_3a" value="false" />
         <ref role="eK_3p" node="5Cg0tVFCSBs" resolve="buzzer" />
       </node>
     </node>
     <node concept="eK_0T" id="5Cg0tVFCSBG" role="eK_4i">
-      <node concept="eK_61" id="5Cg0tVFCSBH" role="eK_1o" />
+      <property role="TrG5h" value="push_one" />
+      <node concept="eK_61" id="5Cg0tVFCSBH" role="eK_1o">
+        <property role="eK_73" value="true" />
+        <ref role="eK_4D" node="5Cg0tVFCSBe" resolve="button_one" />
+        <ref role="eK_4F" node="v2JSW2RDXm" resolve="on" />
+      </node>
+      <node concept="eK_61" id="v2JSW2RDXj" role="eK_1o">
+        <property role="eK_73" value="false" />
+        <ref role="eK_4D" node="5Cg0tVFCSBk" resolve="button_two" />
+        <ref role="eK_4F" node="5Cg0tVFCSyT" resolve="off" />
+      </node>
+      <node concept="eK_2i" id="v2JSW2RDXh" role="eK_1d">
+        <property role="eK_3a" value="false" />
+        <ref role="eK_3p" node="5Cg0tVFCSBs" resolve="buzzer" />
+      </node>
     </node>
     <node concept="eK_0T" id="5Cg0tVFCSBz" role="eK_4i">
       <property role="TrG5h" value="push_two" />
-      <node concept="eK_61" id="5Cg0tVFCSB$" role="eK_1o" />
+      <node concept="eK_61" id="5Cg0tVFCSB$" role="eK_1o">
+        <property role="eK_73" value="false" />
+        <ref role="eK_4D" node="5Cg0tVFCSBe" resolve="button_one" />
+        <ref role="eK_4F" node="5Cg0tVFCSyT" resolve="off" />
+      </node>
+      <node concept="eK_61" id="v2JSW2RDXe" role="eK_1o">
+        <property role="eK_73" value="true" />
+        <ref role="eK_4D" node="5Cg0tVFCSBk" resolve="button_two" />
+        <ref role="eK_4F" node="v2JSW2RDXm" resolve="on" />
+      </node>
       <node concept="eK_2i" id="5Cg0tVFCSBE" role="eK_1d">
         <property role="eK_3a" value="false" />
+        <ref role="eK_3p" node="5Cg0tVFCSBs" resolve="buzzer" />
+      </node>
+    </node>
+    <node concept="eK_0T" id="v2JSW2RDXm" role="eK_4i">
+      <property role="TrG5h" value="on" />
+      <node concept="eK_61" id="v2JSW2RDXn" role="eK_1o">
+        <property role="eK_73" value="false" />
+        <ref role="eK_4D" node="5Cg0tVFCSBe" resolve="button_one" />
+        <ref role="eK_4F" node="5Cg0tVFCSyT" resolve="off" />
+      </node>
+      <node concept="eK_61" id="v2JSW2RDXC" role="eK_1o">
+        <property role="eK_73" value="false" />
+        <ref role="eK_4D" node="5Cg0tVFCSBk" resolve="button_two" />
+        <ref role="eK_4F" node="5Cg0tVFCSyT" resolve="off" />
+      </node>
+      <node concept="eK_2i" id="v2JSW2RDXA" role="eK_1d">
+        <property role="eK_3a" value="true" />
         <ref role="eK_3p" node="5Cg0tVFCSBs" resolve="buzzer" />
       </node>
     </node>
